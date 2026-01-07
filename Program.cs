@@ -25,9 +25,9 @@ enum DeviceLocation
 class Device
 {
     public Guid Id { get; set; }
-    public string Name {get; set; }
-    public string SerialNumber { get; set; }
-
+    public required string Name {get; set; }
+    public required string SerialNumber { get; set; }
+ 
     public DeviceStatus Status { get; set; }
     public DeviceLocation Location { get; set; }
     public List<DeviceHistory> History {get; set; } = new();
@@ -36,8 +36,8 @@ class Device
     class DeviceHistory
 {
     public DateTime Date { get; set; }
-    public string Action { get; set; }
-    public string PerformedBy { get; set; }
+    public required string Action { get; set; }
+    public required string PerformedBy { get; set; }
     
     public DeviceStatus Status { get; set; }
     public DeviceLocation Location { get; set; }
